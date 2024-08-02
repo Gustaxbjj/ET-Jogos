@@ -2,39 +2,43 @@ CREATE DATABASE etjogos;
 USE etjogos;
 
 create table usuario(
-cpf varchar(11) primary key,
-senha varchar(23),
-login varchar(12),
-email varchar(30)
+cpf varchar(14) primary key not null,
+senha varchar(23) not null,
+login varchar(12) not null,
+email varchar(30)  not null
 );
 
 create table jogos(
-cod varchar(11),
-descricao varchar(23),
+cod varchar(11)  primary key not null,
+nome varchar(100) not null,
+descricao varchar(1000),
 genero varchar(12),
-lancamento varchar(12),
- primary key(cod)
+lancamento date
 );
 
 create table produtos(
-cod varchar(11) primary key,
-descricao varchar(23),
-nome varchar(12),
-preco varchar(30),
+cod varchar(11) primary key not null,
+descricao varchar(100),
+nome varchar(12) not null,
+preco varchar(30) not null,
 FK_cod_jogos varchar(11),
 foreign key(FK_cod_jogos) references jogos(cod)
 );
 
 
 create table pagamento(
-cod varchar(11) primary key,
-nome varchar(23),
-id varchar(12)
+
+id varchar(8) primary key not null,
+FK_cpf_usuario varchar(14),
+FK_cod_produtos varchar(11),
+foreign key (FK_cpf_usuario) references usuario(cpf),
+foreign key(FK_cod_produtos) references produtos(cod)
 );
+
 #----------------------------------
 
 create table usuariojogos(
-FK_cpf_usuario varchar(11),
+FK_cpf_usuario varchar(14),
 FK_cod_jogos varchar(11),
 foreign key(FK_cpf_usuario) references usuario(cpf),
 foreign key(FK_cod_jogos) references jogos(cod),
@@ -42,11 +46,11 @@ primary key(FK_cod_jogos,FK_cpf_usuario)
 );
 
 create table usuariosprodutospagamento(
-FK_cpf_usuario varchar(11),
+FK_cpf_usuario varchar(14),
 FK_cod_produtos varchar(11),
-FK_cod_pagamento varchar(11),
+FK_id_pagamento varchar(11),
 foreign key(FK_cpf_usuario) references usuario(cpf),
 foreign key(FK_cod_produtos) references produtos(cod),
-foreign key(FK_cod_pagamento) references pagamento(cod),
-primary key(FK_cpf_usuario,FK_cod_produtos,FK_cod_pagamento)
+foreign key(FK_id_pagamento) references pagamento(id),
+primary key(FK_cpf_usuario,FK_cod_produtos,FK_id_pagamento)
 )
