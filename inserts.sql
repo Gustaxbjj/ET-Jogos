@@ -1,12 +1,18 @@
 insert into usuario(cpf,senha,login,email) values
 ('123.234.345-12', '2984','Gustavo', 'tgfs@aluno.ifal.edu.br'),
- ('353.524.234-14', '3012','karol', 'mks@aluno.ifal.edu.br'), 
- ('543.213.546-45', '2234','Pablo', 'png@aluno.ifal.edu.br');
+('353.524.234-14', '3012','karol', 'mks@aluno.ifal.edu.br'), 
+('543.213.546-45', '2234','Pablo', 'png@aluno.ifal.edu.br'),
+('443.313.346-48', '2403','Iran', 'isbf@aluno.ifal.edu.br'),
+('843.423.346-55', '1203','Virginia E>', 'lvsg@aluno.ifal.edu.br'),
+('532.078.124-70', '4555','Adriely', 'aar@aluno.ifal.edu.br'),
+('543.400.300-50', '6666','Eduardo', 'evosg@aluno.ifal.edu.br')
+;
  
 insert into jogos(cod,nome,descricao,lancamento) values
 ('431','LOL','aventuras extraordinarias','2009-09-23'),
 ('345','Minecraft','Use sua imaginação', '2012-02-15'),
-('352','free fire','Muita ação e aventura', '2002-04-30');
+('352','free fire','Muita ação e aventura', '2002-04-30'),
+('352','free fire','', '2010-02-6');
 
 insert into genero(cod, nome) values
 ('8282', 'battle royal'),
@@ -33,4 +39,5 @@ insert into usuariogenero(FK_cpf_usuario,FK_cod_genero) values
 
 insert into usuariosprodutospagamento(FK_cpf_usuario,FK_cod_produtos,FK_id_pagamento)values
 ('123.234.345-12','474','23450964'),
-('353.524.234-14','484','36455834')
+('353.524.234-14','484','36455834'),
+('543.213.546-45',)
