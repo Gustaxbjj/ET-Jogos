@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-select * from usuariosprodutospagamento where FK_cpf_usuario = '123.234.345-12'
-select 
-=======
 select * from usuariosprodutospagamento where FK_cpf_usuario = '123.234.345-12';
-select * from jogos
+select FK_cpf_usuario as GeneroFavdoUsuario from usuariogenero where  FK_cod_genero = 4444;
+select * from 
 
->>>>>>> becadab105b7b9c39c800508e6eb396864e0c5ea
+
