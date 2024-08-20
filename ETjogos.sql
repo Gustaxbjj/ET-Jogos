@@ -11,14 +11,13 @@ email varchar(35)  not null
 create table jogos(
 cod varchar(11)  primary key not null,
 nome varchar(100) not null,
-descricao varchar(1000),
+descricao varchar(100),
 lancamento date
 );
 
 create table genero(
 cod varchar(10) primary key,
 nome varchar(50)
- 
 );
 
 create table produtos(
