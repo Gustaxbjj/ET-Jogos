@@ -13,29 +13,29 @@ insert into jogos(cod, nome, descricao, lancamento) values
 ('431', 'LOL', 'aventuras extraordinarias', '2009-09-23'),
 ('345', 'Minecraft', 'Use sua imaginação', '2012-02-15'),
 ('352', 'free fire', 'Muita ação e aventura', '2002-04-30'),
-('312', 'clash royale', 'Uma partida, dois jogadores. Só um sai vitorioso', '2011-02-06'),
-('122', 'fornite', 'um jogo e varias aventuras', '2016-05-09'),
-('900', 'Cod (PC)', 'Muito tiro', '2000-12-01'),
-('442', 'GTA V', 'Pura loucura!', '2013-09-17'),
+('312', 'clash royale', 'Uma partida, dois jogadores. Só um sai vitorioso', '2012-02-06'),
+('122', 'fornite', 'um jogo e varias aventuras', '2012-05-09'),
+('900', 'Cod (PC)', 'Muito tiro', '2012-12-01'),
+('442', 'GTA V', 'Pura loucura!', '2012-09-17'),
 ('555', 'valorant', 'alta adrenalina', '2017-03-26');
 
 -- Inserindo dados na tabela genero
 insert into genero(cod, nome) values
 ('8282', 'battle royal'),
-('5632', 'Moba'),
+('3333', 'Moba'),
 ('3343', 'ação'),
 ('1234', 'estrategia');
 
 -- Inserindo dados na tabela produtos
 insert into produtos(cod, descricao, nome, preco, FK_cod_jogos) values
-('474', 'Compre seus personagens e skins favoritas no LOL', 'RP', 'R$30', '431'),
-('484', 'Compre suas skins preferidas no free fire', 'Diamantes', 'R$20', '352'),
-('634', 'Compre suas skins e texturas preferidas', 'Minecoins', 'R$49', '345'),
-('333', 'Fique feliz, compre suas gemas', 'Gemas', 'R$22', '312'),
-('444', 'Fique feliz, compre seus Vbaks', 'Vbacks', 'R$90', '122'),
-('555', 'Fique feliz, compre seus Pontos', 'Pontos', 'R$30', '900'),
-('777', 'Fique feliz, compre seu Dinheiro', 'Dinheiro', 'R$45', '442'),
-('888', 'Fique feliz, compre seus VP', 'VP', 'R$10', '555');
+('474', 'Compre seus personagens e skins favoritas no LOL', 'RP', 30.00, '431'),
+('484', 'Compre suas skins preferidas no free fire', 'Diamantes', 20.00, '352'),
+('634', 'Compre suas skins e texturas preferidas', 'Minecoins', 49.00, '345'),
+('333', 'Fique feliz, compre suas gemas', 'Gemas', 22.00, '312'),
+('444', 'Fique feliz, compre seus Vbaks', 'Vbacks', 90.00, '122'),
+('555', 'Fique feliz, compre seus Pontos', 'Pontos', 30.00, '900'),
+('777', 'Fique feliz, compre seu Dinheiro', 'Dinheiro', 45.00, '442'),
+('888', 'Fique feliz, compre seus VP', 'VP', 10.00, '555');
 
 -- Inserindo dados na tabela pagamento
 insert into pagamento(id, FK_cpf_usuario, FK_cod_produtos) values
@@ -43,6 +43,10 @@ insert into pagamento(id, FK_cpf_usuario, FK_cod_produtos) values
 ('36455834', '353.524.234-14', '484'),
 ('16435436', '543.213.546-45', '634');
 
+insert into generojogo(FK_cod_genero, FK_cod_jogos) values
+('8282','122'),
+('3333','345'),
+('1234','122');
 
 insert into usuariojogos(FK_cpf_usuario, FK_cod_jogos) values 
 ('123.234.345-12', '431'),

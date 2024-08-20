@@ -9,8 +9,7 @@ SELECT * FROM itempedido WHERE FK_cod_produto = 4;
 SELECT * from pedido WHERE prazo_entrega > 12;
 # - Selecione todos os produtos do pedido 3
 SELECT * FROM itempedido WHERE FK_num_pedido = 3;
-# - Apresente os vendedores em ordem crescente
-# dos salarios
+# - Apresente os vendedores em ordem crescente dos salarios
 SELECT * FROM vendedor ORDER BY salario_fixo;
 
 

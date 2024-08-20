@@ -24,7 +24,7 @@ create table produtos(
 cod varchar(11) primary key not null,
 descricao varchar(100),
 nome varchar(12) not null,
-preco varchar(30) not null,
+preco double,
 FK_cod_jogos varchar(11),
 foreign key(FK_cod_jogos) references jogos(cod)
 );
@@ -57,6 +57,15 @@ foreign key(FK_cod_genero) references genero(cod),
 
 primary key(FK_cpf_usuario,FK_cod_genero)
 
+);
+
+create table generojogo(
+FK_cod_genero varchar (10),
+FK_cod_jogos varchar(11),
+foreign key(FK_cod_genero) references genero(cod),
+foreign key(FK_cod_jogos) references jogos(cod),
+
+primary key(FK_cod_genero, FK_cod_jogos)
 );
 
 create table usuariosprodutospagamento(
