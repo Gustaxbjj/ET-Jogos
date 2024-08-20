@@ -17,7 +17,8 @@ insert into jogos(cod,nome,descricao,lancamento) values
 insert into genero(cod, nome) values
 ('8282', 'battle royal'),
 ('5632', 'Moba'),
-('3333', 'ação');
+('3333', 'ação')
+;
 
 insert into produtos(cod,descricao,nome,preco) values
 ('474', 'Compre seus personagens e skins favoritas no LOL', 'RP', 'R$30'),
