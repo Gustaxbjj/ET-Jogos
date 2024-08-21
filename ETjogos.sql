@@ -33,6 +33,7 @@ foreign key(FK_cod_jogos) references jogos(cod)
 create table pagamento(
 
 id varchar(8) primary key not null,
+nome varchar(30),
 FK_cpf_usuario varchar(14),
 FK_cod_produtos varchar(11),
 foreign key (FK_cpf_usuario) references usuario(cpf),
@@ -57,6 +58,15 @@ foreign key(FK_cod_genero) references genero(cod),
 
 primary key(FK_cpf_usuario,FK_cod_genero)
 
+);
+
+create table usuariopagamento(
+FK_cpf_usuario varchar (14),
+FK_id_pagamento varchar(8),
+foreign key(FK_cpf_usuario) references usuario(cpf),
+foreign key(FK_id_pagamento) references pagamento(id),
+
+primary key(FK_cpf_usuario,FK_id_pagamento)
 );
 
 create table generojogo(

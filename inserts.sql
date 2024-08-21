@@ -9,7 +9,7 @@ insert into usuario(cpf, senha, login, email) values
 ('543.400.300-50', '6666', 'Eduardo', 'evosg@aluno.ifal.edu.br');
 
 -- Inserindo dados na tabela jogos
-insert into jogos(cod, nome, descricao, lancamento) values
+insert into jogos(cod, nome, descricao, lancamento) values	
 ('431', 'LOL', 'aventuras extraordinarias', '2009-09-23'),
 ('345', 'Minecraft', 'Use sua imaginação', '2012-02-15'),
 ('352', 'free fire', 'Muita ação e aventura', '2002-04-30'),
@@ -38,10 +38,10 @@ insert into produtos(cod, descricao, nome, preco, FK_cod_jogos) values
 ('888', 'Fique feliz, compre seus VP', 'VP', 10.00, '555');
 
 -- Inserindo dados na tabela pagamento
-insert into pagamento(id, FK_cpf_usuario, FK_cod_produtos) values
-('23450964', '123.234.345-12', '474'),
-('36455834', '353.524.234-14', '484'),
-('16435436', '543.213.546-45', '634');
+insert into pagamento(id, nome ,FK_cpf_usuario, FK_cod_produtos) values
+('23450964', 'pix','123.234.345-12', '474'),
+('36455834', 'cartão de credito','353.524.234-14', '484'),
+('16435436',  'cartão de debito','543.213.546-45', '634');
 
 insert into generojogo(FK_cod_genero, FK_cod_jogos) values
 ('8282','122'),
@@ -53,6 +53,11 @@ insert into usuariojogos(FK_cpf_usuario, FK_cod_jogos) values
 ('353.524.234-14', '345'),
 ('543.213.546-45', '312'),
 ('543.400.300-50', '900');
+
+insert into usuariopagamento(FK_cpf_usuario, FK_id_pagamento) values
+('353.524.234-14', '36455834'),
+('543.400.300-50','16435436'),
+('843.423.346-55','36455834');
 
 -- Inserindo dados na tabela usuariogenero
 insert into usuariogenero(FK_cpf_usuario, FK_cod_genero) values
