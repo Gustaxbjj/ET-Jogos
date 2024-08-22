@@ -14,4 +14,4 @@ SELECT nome as produtosDisponiveis FROM produtos where preco < 50 AND preco > 20
 SELECT FK_cod_genero as jogos FROM generojogo where  FK_cod_jogos IN('122'); 
 
 #Quais foram os metodos de pagamento da Virginia?
-select FK_id_pagamento from usuariopagamento FK_cpf_usuario IN(('843.423.346-55')
+SELECT FK_id_pagamento FROM usuariopagamento WHERE FK_cpf_usuario = '843.423.346-55';
