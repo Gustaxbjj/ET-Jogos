@@ -1,17 +1,27 @@
-#Genero favorito desse usuario?
-select FK_cpf_usuario as GeneroFavdoUsuario from usuariogenero where  FK_cod_genero = '8282';
+#Genero favorito desse usuario? 1
+SELECT FK_cpf_usuario AS GeneroFavdoUsuario FROM usuariogenero WHERE  FK_cod_genero = '8282';
 
-#Quais jogos contem esses codigos
-SELECT nome FROM jogos WHERE cod IN ('431', '345', '352');
+#Quais os jogos mais populares?2
+SELECT FK_cod_jogos AS jogos , COUNT(*) AS popularidade FROM usuariojogos GROUP BY FK_cod_jogos ORDER BY popularidade DESC;
 
-#Quais os jogos lançados em 2012?
+#Quais os jogos lançados em 2012?3
 SELECT nome FROM jogos WHERE lancamento LIKE '2012%';
 
-#Quais produtos eu posso comprar com  R$20 até R$50? 
+#Quais produtos eu posso comprar com  R$20 até R$50? 4
 SELECT nome as produtosDisponiveis FROM produtos where preco < 50 AND preco > 20;
 
-#Quais jogos são do gênero moba?
+#Quais jogos são do gênero moba?5
 SELECT FK_cod_genero as jogos FROM generojogo where  FK_cod_jogos IN('122'); 
 
-#Quais foram os metodos de pagamento da Virginia?
+#Quais foram os metodos de pagamento da Virginia?6
 SELECT FK_id_pagamento FROM usuariopagamento WHERE FK_cpf_usuario = '843.423.346-55';
+
+#Em quais jogos eu posso comprar skins e passe?7
+SELECT FK_cod_jogos as jogosRelacionados FROM produtos WHERE nome LIKE 'skins%' OR nome LIKE 'passe%';
+
+#Quais produtos do Minecraft e free fire posso compra?8
+SELECT nome FROM produtos WHERE  FK_cod_jogos IN('345','352');
+
+#quantos usuarios cadastrados?9s
+SELECT count(*) AS quantidadeDeusuarios FROM usuario;
+
