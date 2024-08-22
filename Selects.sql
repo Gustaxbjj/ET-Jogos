@@ -17,11 +17,21 @@ SELECT FK_cod_genero as jogos FROM generojogo where  FK_cod_jogos IN('122');
 SELECT FK_id_pagamento FROM usuariopagamento WHERE FK_cpf_usuario = '843.423.346-55';
 
 #Em quais jogos eu posso comprar skins e passe?7
-SELECT FK_cod_jogos as jogosRelacionados FROM produtos WHERE nome LIKE 'skins%' OR nome LIKE 'passe%';
+SELECT FK_cod_jogos AS jogosRelacionados FROM produtos WHERE nome LIKE 'skins%' OR nome LIKE 'passe%';
 
 #Quais produtos do Minecraft e free fire posso compra?8
-SELECT nome FROM produtos WHERE  FK_cod_jogos IN('345','352');
+SELECT FK_cod_jogos AS jogos,nome AS produtos FROM produtos WHERE  FK_cod_jogos IN('345','352');
 
 #quantos usuarios cadastrados?9s
 SELECT count(*) AS quantidadeDeusuarios FROM usuario;
+
+#Quantos usuarios jogaram LOL?
+SELECT COUNT(FK_cpf_usuario) AS total_usuarios FROM usuariojogos WHERE FK_cod_jogos LIKE '%431%';
+
+#Qual a quantidade de pessoas que jogaram cada jogo?10
+SELECT FK_cod_jogos, COUNT(FK_cpf_usuario) AS total_usuarios FROM usuariojogos GROUP BY FK_cod_jogos ORDER BY total_usuarios DESC;
+
+
+
+
 
