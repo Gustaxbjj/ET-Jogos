@@ -70,9 +70,9 @@ primary key(FK_cpf_usuario,FK_id_pagamento)
 );
 
 create table generojogo(
-FK_cod_genero varchar (10),
+FK_cpf_genero varchar (14),
 FK_cod_jogos varchar(11),
-foreign key(FK_cod_genero) references genero(cod),
+foreign key(FK_cpf_genero) references genero(cpf),
 foreign key(FK_cod_jogos) references jogos(cod),
 
 primary key(FK_cod_genero, FK_cod_jogos)
