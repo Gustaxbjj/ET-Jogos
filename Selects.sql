@@ -13,7 +13,5 @@ SELECT nome as produtosDisponiveis FROM produtos where preco < 50 AND preco > 20
 #Quais jogos são do gênero moba?
 SELECT FK_cod_genero as jogos FROM generojogo where  FK_cod_jogos IN('122'); 
 
-#Quais foram os metodos de pagamenrto da Virginia?
-
-
-
+#Quais foram os metodos de pagamento da Virginia?
+select FK_id_pagamento from usuariopagamento FK_cpf_usuario
