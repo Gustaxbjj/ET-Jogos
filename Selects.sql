@@ -32,6 +32,8 @@ SELECT COUNT(FK_cpf_usuario) AS total_usuarios FROM usuariojogos WHERE FK_cod_jo
 SELECT FK_cod_jogos, COUNT(FK_cpf_usuario) AS total_usuarios FROM usuariojogos GROUP BY FK_cod_jogos ORDER BY total_usuarios DESC;
 
 
+#tela descricao 
+select img from jogo
 
 
 

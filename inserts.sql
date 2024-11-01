@@ -38,11 +38,16 @@ insert into produtos(cod, descricao, nome, preco, FK_cod_jogos) values
 ('777', 'Fique feliz, compre seu Dinheiro', 'skins de amas e bens', 45.00, '442'),
 ('888', 'Fique feliz, compre seus VP', 'VP', 10.00, '555');
 
+
+
 -- Inserindo dados na tabela pagamento
 insert into pagamento(id, nome ,FK_cpf_usuario, FK_cod_produtos) values
 ('23450964', 'pix','123.234.345-12', '474'),
 ('36455834', 'cartão de credito','353.524.234-14', '484'),
 ('16435436',  'cartão de debito','543.213.546-45', '634');
+
+
+
 
 insert into generojogo(FK_cod_genero, FK_cod_jogos) values
 ('8282','122'),

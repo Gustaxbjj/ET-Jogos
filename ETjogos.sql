@@ -3,7 +3,7 @@ USE etjogos;
 
 create table usuario(
 cpf varchar(14) primary key not null,
-senha varchar(23) not null,
+senh	a varchar(23) not null,
 login varchar(12) not null,
 email varchar(35)  not null
 );
@@ -29,7 +29,10 @@ FK_cod_jogos varchar(11),
 foreign key(FK_cod_jogos) references jogos(cod)
 );
 
+create table(
 
+)
+ 
 create table pagamento(
 
 id varchar(8) primary key not null,
