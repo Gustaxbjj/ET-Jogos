@@ -3,7 +3,7 @@ USE etjogos;
 
 create table usuario(
 cpf varchar(14) primary key not null,
-senh	a varchar(23) not null,
+senha varchar(23) not null,
 login varchar(12) not null,
 email varchar(35)  not null
 );
@@ -11,6 +11,7 @@ email varchar(35)  not null
 create table jogos(
 cod varchar(11)  primary key not null,
 nome varchar(100) not null,
+imgDoJogo varchar(60),
 descricao varchar(100),
 lancamento date
 );
@@ -18,25 +19,23 @@ lancamento date
 create table genero(
 cod varchar(10) primary key,
 nome varchar(50)
+
 );
 
 create table produtos(
 cod varchar(11) primary key not null,
 descricao varchar(100),
 nome varchar(50) not null,
+fotoProduto varchar(60),
 preco double,
 FK_cod_jogos varchar(11),
 foreign key(FK_cod_jogos) references jogos(cod)
 );
-
-create table(
-
-)
  
 create table pagamento(
 
 id varchar(8) primary key not null,
-nome varchar(30),
+formaDepagar varchar(30),
 FK_cpf_usuario varchar(14),
 FK_cod_produtos varchar(11),
 foreign key (FK_cpf_usuario) references usuario(cpf),
