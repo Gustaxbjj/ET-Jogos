@@ -1,0 +1,41 @@
+body{
+    background-color: #262521;
+  
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+;   gap: 20px;
+    padding-top: 20px;
+}
+.et{
+    width: 250px;
+    height: 250px;
+}
+#box{
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    color:black;
+    background-color: #A7A7A7;
+}
+input::placeholder {
+    color: black; /* Cor do placeholder (exemplo: tomate) */
+     /* Estilo da fonte (opcional) */
+}
+#btn{
+    width: 180px;
+    height: 45px;
+    
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #79DA76;
+    border-radius: 10px;
+}
+.link{
+   color: white;
+   text-decoration: none;
+   padding-top: -px;
+}

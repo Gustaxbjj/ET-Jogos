@@ -1,0 +1,31 @@
+.topao{
+    background-color: #262521;
+}
+.inicial{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.topo{
+    padding-top: 100px;
+    height: 50px;
+    width: 50px;
+}
+.topo1{
+    padding-top: 20px;
+    height: 100px;
+    width: 100px;
+}
+.pesquisa{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 60px;
+    align-items: center;
+}
+.pesq{
+    width: 800px;
+    background-color: transparent;
+    border: solid 2px black;
+    height: 40px;
+}
