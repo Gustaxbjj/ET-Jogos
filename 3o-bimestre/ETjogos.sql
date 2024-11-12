@@ -3,6 +3,7 @@ USE etjogos;
 
 create table usuario(
 cpf varchar(14) primary key not null,
+imgUsuario varchar(60),
 senha varchar(23) not null,
 login varchar(12) not null,
 email varchar(35)  not null

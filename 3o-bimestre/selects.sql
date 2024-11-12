@@ -27,3 +27,5 @@ select imgDoJogo, nome from jogos ;
 #puxando as informações dos produtos especificos
 select j.imgDojogo AS imagem, p.nome AS nomeProduto, p.preco AS Preço 
 from jogos j inner join produtos p on j.cod = p.FK_cod_jogos WHERE j.cod = "352";
+
+#Tela de perfil

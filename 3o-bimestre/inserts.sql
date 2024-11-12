@@ -1,13 +1,13 @@
 
 -- Inserindo dados na tabela usuario
-insert into usuario(cpf, senha, login, email) values
-('123.234.345-12', '2984', 'Gustavo', 'tgfs@aluno.ifal.edu.br'),
-('353.524.234-14', '3012', 'karol', 'mks@aluno.ifal.edu.br'),
-('543.213.546-45', '2234', 'Pablo', 'png@aluno.ifal.edu.br'),
-('443.313.346-48', '2403', 'Iran', 'isbf@aluno.ifal.edu.br'),
-('843.423.346-55', '1203', 'Virginia E>', 'lvsg@aluno.ifal.edu.br'),
-('532.078.124-70', '4555', 'Adriely', 'aar@aluno.ifal.edu.br'),
-('543.400.300-50', '6666', 'Eduardo', 'evosg@aluno.ifal.edu.br');
+insert into usuario(cpf, senha,imgUsuario, login, email) values
+('123.234.345-12', '2984', 'imgGustaco' ,'Gustavo', 'tgfs@aluno.ifal.edu.br'),
+('353.524.234-14', '3012', 'imgKarol','karol', 'mks@aluno.ifal.edu.br'),
+('543.213.546-45', '2234','imgPablo' ,'Pablo', 'pgt@aluno.ifal.edu.br'),
+('443.313.346-48', '2403','imgIran' ,'Iran', 'isbf@aluno.ifal.edu.br'),
+('843.423.346-55', '1203', 'imgVirginia','Virginia E>', 'lvsg@aluno.ifal.edu.br'),
+('532.078.124-70', '4555', 'imgAdriele','Adriely', 'aar@aluno.ifal.edu.br'),
+('543.400.300-50', '6666', 'imgEduardo','Eduardo', 'evosg@aluno.ifal.edu.br');
 
 -- Inserindo dados na tabela jogos
 insert into jogos(cod, nome, imgDoJogo ,descricao, lancamento) values	
