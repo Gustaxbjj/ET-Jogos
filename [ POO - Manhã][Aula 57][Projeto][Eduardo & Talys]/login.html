@@ -1,25 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <title>Document</title>
+    <title>Login</title>
+    <style>
+        /* Estilo do Body */
+        body {
+            background-color: #262521; /* Cor de fundo escura */
+            margin: 0; /* Remover margens padrão */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            height: 100vh; /* Altura da tela inteira */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilo do Formulário */
+        .login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espaçamento entre os elementos */
+            padding: 20px;
+            background-color: #262521; /* Cor de fundo escura */
+            
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Largura fixa para o formulário */
+        }
+
+        /* Estilo da Imagem */
+        .et {
+            width: 150px; /* Reduzido para tamanho adequado */
+            height: 150px; /* Altura proporcional */
+            margin-bottom: 20px;
+        }
+
+        /* Estilo dos Inputs */
+        #box {
+            width: 100%; /* Largura 100% do container */
+            height: 40px;
+            border-radius: 6px;
+            color: black;
+            background-color: #A7A7A7;
+            padding-left: 10px; /* Adicionando preenchimento para o texto */
+            border: 1px solid #ccc; /* Borda suave */
+        }
+
+        #box:focus {
+            border-color: #79DA76; /* Cor de borda ao focar */
+            outline: none; /* Remover o contorno padrão */
+        }
+
+        input::placeholder {
+            color: black; /* Cor do placeholder */
+            font-style: italic; /* Estilo opcional para o placeholder */
+        }
+
+        /* Estilo do Botão */
+        #btn {
+            width: 100%; /* Largura 100% do container */
+            height: 45px;
+            font-family: sans-serif;
+            font-weight: bold;
+            background-color: #79DA76;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer; /* Cursor de "mãozinha" ao passar sobre o botão */
+            transition: background-color 0.3s ease; /* Transição suave */
+        }
+
+        #btn:hover {
+            background-color: #66c966; /* Cor de fundo ao passar o mouse */
+        }
+
+        /* Estilo dos Links */
+        .link {
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .link:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+        }
+
+    </style>
 </head>
 <body>
     <div class="login">
-        <img src="img/et-removebg-preview.png" class="et">
+        <img src="img/et-removebg-preview.png" class="et" alt="Extraterrestre">
         
- 
-    <input type="text" placeholder="E-mail" id="box">
+        <input type="email" placeholder="E-mail" id="email" required>
+        <input type="password" placeholder="Senha" id="senha" required>
    
-    <input type="text" placeholder="Senha" id="box">
-   
-    <a href="inicial.html"><button id="btn">Entrar</button></a>
+        <button id="btn" onclick="validarLogin()">Entrar</button>
     
-    <a class="link" href="">Não tem conta? Criar conta.</a>
-    <a class="link" href="">Esqueceu a senha?</a>
-</div>
+        <a class="link" href="cadastro.html">Não tem conta? Criar conta.</a>
+        <a class="link" href="recuperar-senha.html">Esqueceu a senha?</a>
+    </div>
+
+    <script>
+        function validarLogin() {
+            // E-mail e senha definidos
+            var emailValido = "lekdavid@gmail.com";
+            var senhaValida = "lek123";
+
+            // Obter os valores dos campos
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+            // Verificar se os campos estão preenchidos
+            if (email === "" || senha === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+            // Verificar se o e-mail e a senha estão corretos
+            if (email === emailValido && senha === senhaValida) {
+                alert("Login bem-sucedido! Redirecionando...");
+                window.location.href = "inicial.html";  // Redireciona após login bem-sucedido
+            } else {
+                alert("E-mail ou senha incorretos.");
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
