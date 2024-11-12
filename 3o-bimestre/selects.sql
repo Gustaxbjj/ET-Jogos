@@ -6,16 +6,16 @@ from genero g  inner join generojogo gj on g.cod = gj.FK_cod_genero
 inner join jogos j on j.cod =gj.FK_cod_jogos GROUP BY g.nome;
 
 #Tela inicial
-#Na tela inicial indicaremos Nivel de popularidade e  jogos de acordo com seu gosto pessoal.
+#Na tela inicial indicaremos Nivel de popularidade e  
 select j.imgDoJogo AS imagem, COUNT(*) AS numJogadores
 from jogos j inner join usuariojogos uj on j.cod = uj.FK_cod_jogos GROUP BY FK_cod_jogos ORDER BY COUNT(*) DESC; 
 
-
+#jogos de acordo com seu gosto pessoal.
 select j.imgDoJogo AS imagem
 from genero g  inner join generojogo gj on g.cod = gj.FK_cod_genero
 inner join jogos j on j.cod =gj.FK_cod_jogos GROUP BY g.nome HAVING g.nome = 'moba';
 
-#Tela descrição do jogo
+#Tela descrição do jogo	
 #Vamos entender umm pouco sobre  o jogo? nessa tela veremos 
 #especificações do jogo para entendermos melhor
 select imgDoJogo,nome,descricao from jogos;  

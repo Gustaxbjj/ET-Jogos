@@ -1,0 +1,49 @@
+.topado{
+    margin: 0%;
+    padding: 0%;
+    background-color: #262521;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  border-radius: 10px;
+}
+.et{
+width: 200px;
+height: 200px;
+
+}
+.foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1px;
+    border: solid 30px gray;
+    border-radius: 10px;
+}
+.texto{
+    text-align: center;
+    color: white;
+    word-wrap: break-word;
+    gap: 100px;
+}
+
+
+/* Aplica a animação de flip na imagem */
+.foto {
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s; /* Suaviza o efeito de transformação */
+    transform-style: preserve-3d; /* Necessário para o efeito de flip */
+    cursor: pointer;
+}
+
+/* Adiciona o efeito flip quando a imagem é "hovered" (passada o mouse por cima) */
+.foto{
+    transform: rotateY(180deg); /* Vira a imagem no eixo Y */
+}
+
+/* Opcional: Estilo para um container de imagem para dar profundidade */
+.container {
+    perspective: 1000px; /* Define a perspectiva para o efeito 3D */
+}
