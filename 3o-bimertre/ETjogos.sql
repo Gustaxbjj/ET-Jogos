@@ -3,15 +3,17 @@ USE etjogos;
 
 create table usuario(
 cpf varchar(14) primary key not null,
-senh	a varchar(23) not null,
+senha varchar(23) not null,
 login varchar(12) not null,
-email varchar(35)  not null
+email varchar(35)  not null,
+imgDoUsuario varchar(60)
 );
 
 create table jogos(
 cod varchar(11)  primary key not null,
 nome varchar(100) not null,
 descricao varchar(100),
+imgDojogo varchar(60),
 lancamento date
 );
 
@@ -25,18 +27,17 @@ cod varchar(11) primary key not null,
 descricao varchar(100),
 nome varchar(50) not null,
 preco double,
+
 FK_cod_jogos varchar(11),
 foreign key(FK_cod_jogos) references jogos(cod)
 );
 
-create table(
 
-)
- 
 create table pagamento(
 
 id varchar(8) primary key not null,
-nome varchar(30),
+formaDePagamento varchar(30),
+imgQrcode varchar(60),
 FK_cpf_usuario varchar(14),
 FK_cod_produtos varchar(11),
 foreign key (FK_cpf_usuario) references usuario(cpf),
