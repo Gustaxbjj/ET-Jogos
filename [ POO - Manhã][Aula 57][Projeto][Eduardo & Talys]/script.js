@@ -1,22 +1,75 @@
-function validarLogin() {
-    // Obter os valores dos campos
-    var email = document.getElementById("email").value;
-    var senha = document.getElementById("senha").value;
+  // Função para alternar para o formulário de cadastro
+        function mostrarCadastro() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('cadastroForm').style.display = 'block';
+        }
 
-    // Verificar se os campos estão preenchidos
-    if (email === "" || senha === "") {
-        alert("Por favor, preencha todos os campos.");
-        return false;
-    }
+        // Função para alternar para o formulário de login
+        function mostrarLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('cadastroForm').style.display = 'none';
+        }
 
-    // Verificar se o e-mail tem um formato válido
-    var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!regexEmail.test(email)) {
-        alert("Por favor, insira um e-mail válido.");
-        return false;
-    }
+        // Função para cadastrar um novo usuário
+        function cadastrarUsuario() {
+            var email = document.getElementById('cadEmail').value;
+            var senha = document.getElementById('cadSenha').value;
+            var confirmarSenha = document.getElementById('cadConfirmarSenha').value;
 
-    // Se tudo estiver certo, redirecionar para a página inicial (ou outra lógica de autenticação)
-    alert("Login bem-sucedido! Redirecionando...");
-    window.location.href = "inicial.html";  // Ou seu destino real após login bem-sucedido
-}
+            if (email === "" || senha === "" || confirmarSenha === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem.");
+                return;
+            }
+
+            // Recupera as contas cadastradas no localStorage ou inicializa um array vazio
+            var contas = JSON.parse(localStorage.getItem('contas')) || [];
+
+            // Verifica se o e-mail já está registrado
+            for (var i = 0; i < contas.length; i++) {
+                if (contas[i].email === email) {
+                    alert("Este e-mail já está registrado.");
+                    return;
+                }
+            }
+
+            // Adiciona a nova conta no array de contas
+            contas.push({ email: email, senha: senha });
+
+            // Armazena as contas no localStorage
+            localStorage.setItem('contas', JSON.stringify(contas));
+
+            alert("Cadastro realizado com sucesso! Agora faça login.");
+            mostrarLogin(); // Exibe o formulário de login
+        }
+
+        // Função para validar o login
+        function validarLogin() {
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+            // Recupera as contas armazenadas no localStorage
+            var contas = JSON.parse(localStorage.getItem('contas')) || [];
+
+            // Verifica se os campos de login estão preenchidos
+            if (email === "" || senha === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+            // Verifica se o e-mail e a senha são válidos
+            for (var i = 0; i < contas.length; i++) {
+                if (contas[i].email === email && contas[i].senha === senha) {
+                    alert("Login bem-sucedido! Redirecionando...");
+                    window.location.href = "inicial.html";  // Redireciona após login bem-sucedido
+                    return;
+                }
+            }
+
+            alert("E-mail ou senha incorretos.");
+            return false;
+        }
