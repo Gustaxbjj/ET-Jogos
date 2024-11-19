@@ -48,5 +48,15 @@ select login,email,senha from usuario where login = "Gustavo";
 
 select j.imgDojogo AS FotoDoJogo, j.nome AS nomeDoJogo, u.login
 from jogos j inner join usuariojogos uj on j.cod = uj.FK_cod_jogos
-inner join usuario u on u.cpf = uj.FK_cpf_usuario
+inner join usuario u on u.cpf = uj.FK_cpf_usuario where login = 'Eduardo';
+
+#################################################################################################
+
+#tela do historico de compras
+
+select imgDoProduto As Foto, nome, descricao As descrição,
+preco As preço from produtos where cod = '484';
+
+#################################################################################################
+
 
