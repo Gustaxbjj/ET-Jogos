@@ -1,4 +1,5 @@
 
+
 -- Inserindo dados na tabela usuario
 insert into usuario(cpf, senha, login, email) values
 ('123.234.345-12', '2984', 'Gustavo', 'tgfs@aluno.ifal.edu.br'),
@@ -10,15 +11,15 @@ insert into usuario(cpf, senha, login, email) values
 ('543.400.300-50', '6666', 'Eduardo', 'evosg@aluno.ifal.edu.br');
 
 -- Inserindo dados na tabela jogos
-insert into jogos(cod, nome, imgDoJogo ,descricao, lancamento) values	
-('431', 'LOL', 'foto lol'  ,'aventuras extraordinarias', '2009-09-23'),
-('345', 'Minecraft', 'foto mine','Use sua imaginação', '2012-02-15'),
-('352', 'free fire', 'foto free fire','Muita ação e aventura', '2002-04-30'),
-('312', 'clash royale', 'foto clash royal','Uma partida, dois jogadores. Só um sai vitorioso', '2012-02-06'),
-('122', 'fornite', 'foto fortinite','um jogo e varias aventuras', '2012-05-09'),
-('900', 'Cod (PC)', 'foto cod','Muito tiro', '2012-12-01'),
-('442', 'GTA V', 'foto gta','Pura loucura!', '2012-09-17'),
-('555', 'valorant', 'foto valorant','alta adrenalina', '2017-03-26');
+insert into jogos(cod, nome, descricao, lancamento) values	
+('431', 'LOL', 'aventuras extraordinarias', '2009-09-23'),
+('345', 'Minecraft', 'Use sua imaginação', '2012-02-15'),
+('352', 'free fire', 'Muita ação e aventura', '2002-04-30'),
+('312', 'clash royale', 'Uma partida, dois jogadores. Só um sai vitorioso', '2012-02-06'),
+('122', 'fornite', 'um jogo e varias aventuras', '2012-05-09'),
+('900', 'Cod (PC)', 'Muito tiro', '2012-12-01'),
+('442', 'GTA V', 'Pura loucura!', '2012-09-17'),
+('555', 'valorant', 'alta adrenalina', '2017-03-26');
 
 -- Inserindo dados na tabela genero
 insert into genero(cod, nome) values
@@ -28,31 +29,31 @@ insert into genero(cod, nome) values
 ('1234', 'estrategia');
 
 -- Inserindo dados na tabela produtos
-insert into produtos(cod, descricao, nome, fotoProduto,preco, FK_cod_jogos) values
-('474', 'Compre seus personagens e skins favoritas no LOL', "Foto produto 1" ,'skins', 30.00, '431'),
-('484', 'Compre suas skins preferidas no free fire',  "Foto produto 2" ,'armas e passe', 20.00, '352'),
-('634', 'Compre suas skins e texturas preferidas',  "Foto produto 3" ,'skins e texturas', 49.00, '345'),
-('333', 'Fique feliz, compre suas gemas',  "Foto produto 4" ,'Gemas', 22.00, '312'),
-('444', 'Fique feliz, compre seus Vbaks',  "Foto produto 5" ,'passe', 90.00, '122'),
-('555', 'Fique feliz, compre seus Pontos',  "Foto produto 6" ,'passe', 30.00, '900'),
-('777', 'Fique feliz, compre seu Dinheiro',  "Foto produto 7" ,'skins de amas e bens', 45.00, '442'),
-('888', 'Fique feliz, compre seus VP',  "Foto produto 8" ,'VP', 10.00, '555');
+insert into produtos(cod, descricao, nome, preco, FK_cod_jogos) values
+('474', 'Compre seus personagens e skins favoritas no LOL', 'skins', 30.00, '431'),
+('484', 'Compre suas skins preferidas no free fire', 'armas e passe', 20.00, '352'),
+('634', 'Compre suas skins e texturas preferidas', 'skins e texturas', 49.00, '345'),
+('333', 'Fique feliz, compre suas gemas', 'Gemas', 22.00, '312'),
+('444', 'Fique feliz, compre seus Vbaks', 'passe', 90.00, '122'),
+('555', 'Fique feliz, compre seus Pontos', 'passe', 30.00, '900'),
+('777', 'Fique feliz, compre seu Dinheiro', 'skins de amas e bens', 45.00, '442'),
+('888', 'Fique feliz, compre seus VP', 'VP', 10.00, '555');
 
 
 
 -- Inserindo dados na tabela pagamento
-insert into pagamento(id, formaDepagar ,FK_cpf_usuario, FK_cod_produtos) values
+insert into pagamento(id, nome ,FK_cpf_usuario, FK_cod_produtos) values
 ('23450964', 'pix','123.234.345-12', '474'),
 ('36455834', 'cartão de credito','353.524.234-14', '484'),
 ('16435436',  'cartão de debito','543.213.546-45', '634');
 
 
+
+
 insert into generojogo(FK_cod_genero, FK_cod_jogos) values
 ('8282','122'),
 ('3333','345'),
-('1234','122'),
-('3333','431'),
-('3343','442');
+('1234','122');
 
 insert into usuariojogos(FK_cpf_usuario, FK_cod_jogos) values 
 ('123.234.345-12', '431'),
