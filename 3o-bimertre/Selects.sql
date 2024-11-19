@@ -33,3 +33,15 @@ select imgDojogo, nome from jogos ;
 select j.imgDojogo AS imagem, p.nome AS nomeProduto, p.preco AS Preço 
 from jogos j inner join produtos p on j.cod = p.FK_cod_jogos WHERE j.cod = "352";
 ###############################################################################################
+
+##tela do carrinho
+select imgDoProduto As Foto, nome, descricao As descrição, quantidade,
+preco As preço from produtos where cod = '484';
+
+###############################################################################################
+#tela de perfil
+select login,email,senha from usuario where login = "Gustavo";
+
+################################################################################################
+
+

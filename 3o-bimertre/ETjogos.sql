@@ -13,7 +13,7 @@ create table jogos(
 cod varchar(11)  primary key not null,
 nome varchar(100) not null,
 descricao varchar(100),
-imgDojogo varchar(60),
+imgDojogo varchar(60) not null,
 lancamento date
 );
 
@@ -26,7 +26,9 @@ create table produtos(
 cod varchar(11) primary key not null,
 descricao varchar(100),
 nome varchar(50) not null,
+quantidade varchar(10),
 preco double,
+imgDoProduto varchar(30),
 
 FK_cod_jogos varchar(11),
 foreign key(FK_cod_jogos) references jogos(cod)
