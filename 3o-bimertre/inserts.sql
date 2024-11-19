@@ -1,4 +1,4 @@
--- Inserindo dados na tabela usuario
+
 insert into usuario(cpf, senha, login, email,imgDoUsuario) values
 ('123.234.345-12', '2984', 'Gustavo', 'tgfs@aluno.ifal.edu.br', 'imgGustavo'),
 ('353.524.234-14', '3012', 'karol', 'mks@aluno.ifal.edu.br','imgKarol'),
@@ -8,7 +8,6 @@ insert into usuario(cpf, senha, login, email,imgDoUsuario) values
 ('532.078.124-70', '4555', 'Adriely', 'aar@aluno.ifal.edu.br','imgAdriely'),
 ('543.400.300-50', '6666', 'Eduardo', 'evosg@aluno.ifal.edu.br','imgEduardo');
 
--- Inserindo dados na tabela jogos
 insert into jogos(cod, nome, descricao, imgDoJogo,lancamento) values	
 ('431', 'LOL', 'aventuras extraordinarias',"imglol" ,'2009-09-23'),
 ('345', 'Minecraft', 'Use sua imaginação', "imgminecraft",'2012-02-15'),
@@ -19,14 +18,14 @@ insert into jogos(cod, nome, descricao, imgDoJogo,lancamento) values
 ('442', 'GTA V', 'Pura loucura!', "imgGta",'2012-09-17'),
 ('555', 'valorant', 'alta adrenalina', "imgvalorant",'2017-03-26');
 
--- Inserindo dados na tabela genero
+
 insert into genero(cod, nome) values
 ('8282', 'battle royal'),
 ('3333', 'Moba'),
 ('3343', 'ação'),
 ('1234', 'estrategia');
 
--- Inserindo dados na tabela produtos
+
 insert into produtos(cod, descricao, nome, preco,FK_cod_jogos,imgDoProduto) values
 ('474', 'Compre seus personagens e skins favoritas no LOL', 'skins', 30.00, '431','imglol'),
 ('484', 'Compre suas skins preferidas no free fire', 'armas e passe', 20.00, '352','imgfreefire'),
@@ -39,8 +38,40 @@ insert into produtos(cod, descricao, nome, preco,FK_cod_jogos,imgDoProduto) valu
 
 
 
--- Inserindo dados na tabela pagamento
+
 insert into pagamento(id, formaDePagamento,imgQrcode,FK_cpf_usuario, FK_cod_produtos) values
 ('23450964', 'pix',"Qrcode",'123.234.345-12', '474'),
 ('36455834', 'cartão de credito','cartao','353.524.234-14', '484'),
 ('16435436',  'cartão de credito','cartao','543.213.546-45', '634');
+
+
+
+
+insert into generojogo(FK_cod_genero, FK_cod_jogos) values
+('8282','122'),
+('3333','345'),
+('1234','122');
+
+insert into usuariojogos(FK_cpf_usuario, FK_cod_jogos) values 
+('123.234.345-12', '431'),
+('353.524.234-14', '345'),
+('543.213.546-45', '312'),
+('543.400.300-50', '900'),
+('843.423.346-55','900'),
+('532.078.124-70', '431');
+
+insert into usuariopagamento(FK_cpf_usuario, FK_id_pagamento) values
+('353.524.234-14', '36455834'),
+('543.400.300-50','16435436'),
+('843.423.346-55','36455834');
+
+
+insert into usuariogenero(FK_cpf_usuario, FK_cod_genero) values
+('123.234.345-12', '8282'),
+('353.524.234-14', '3333'),
+('123.234.345-12', '3343');
+
+insert into usuariosprodutospagamento(FK_cpf_usuario, FK_cod_produtos, FK_id_pagamento) values
+('123.234.345-12', '474', '23450964'),
+('353.524.234-14', '484', '36455834'),
+('543.213.546-45', '634', '16435436');

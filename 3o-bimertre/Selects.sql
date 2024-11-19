@@ -44,4 +44,9 @@ select login,email,senha from usuario where login = "Gustavo";
 
 ################################################################################################
 
+#tela jogos favoritos
+
+select j.imgDojogo AS FotoDoJogo, j.nome AS nomeDoJogo, u.login
+from jogos j inner join usuariojogos uj on j.cod = uj.FK_cod_jogos
+inner join usuario u on u.cpf = uj.FK_cpf_usuario
 
