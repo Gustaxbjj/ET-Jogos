@@ -59,4 +59,28 @@ preco As preço from produtos where cod = '484';
 
 #################################################################################################
 
+#tela de pagamento
 
+select 
+  u.login AS Nome,
+  p.formaDePagamento,
+  p.id AS IDdaCompra,
+  po.preco AS ValorDaCompra,
+  u.cpf AS CPfDoUsuario
+from 
+  pagamento p 
+inner join 
+ usuariosprodutospagamento uppa on p.id = uppa.FK_id_pagamento
+inner join 
+  usuario u on u.cpf = uppa.FK_cpf_usuario
+inner join 
+  produtos po on po.cod = uppa.FK_cod_produtos where login = "Gustavo";
+  
+#####################################################################################################
+
+#tela pix
+
+select p.imgQrcode As QRcode, u.login As Nome, u.cpf 
+from pagamento p inner join usuario u on u.cpf = p.FK_cpf_usuario;
+
+#####################################################################################################
