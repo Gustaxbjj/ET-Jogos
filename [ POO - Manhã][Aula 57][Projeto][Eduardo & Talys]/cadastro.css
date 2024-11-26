@@ -1,0 +1,17 @@
+.paidetodos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.seta{
+    border: solid 2px rgba(121, 218, 118, 1) ;
+    border-radius: 30px;
+    width: 40px;
+    height: 2-px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(121, 218, 118, 1);
+
+}
