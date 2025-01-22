@@ -15,4 +15,5 @@ const Genero = database.define(
             type:DataType.STRING,
             allowNull:true
         }
-   })
+   });
+   module.exports = Genero
