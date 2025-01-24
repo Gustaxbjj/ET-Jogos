@@ -1,36 +1,36 @@
 const {DataTypes} = require('sequelize');
 const database = require('../db');
 
-const Pagamentos = database.define(
-    'Jogos',
+const Pagamento = database.define(
+    'Pagamento',
    {
 
        id:{
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             autoIncrement: false,
-            allowNull: true,
+            allowNull: false,
             primaryKey: true
         },
 
         nome:{
-            type:DataType.STRING,
-            allowNull:true
+            type:DataTypes.STRING,
+            allowNull:false
         },
 
         descricao:{
-            type: DataType.STRING,
-            allowNull:true
+            type: DataTypes.STRING,
+            allowNull:false
         },
 
         imgDoJogo:{
-            type:DataType.STRING,
-            allowNull: true
+            type:DataTypes.STRING,
+            allowNull: false
         },
 
         lancamento:{
-            type:DataType.DATE,
-            allowNull:true
+            type:DataTypes.DATE,
+            allowNull:false
         }
 
    });      
-   module.exports = Pagamentos
+   module.exports = Pagamento

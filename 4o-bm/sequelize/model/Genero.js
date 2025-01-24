@@ -12,7 +12,7 @@ const Genero = database.define(
             primaryKey: true
         },
         nome:{
-            type:DataType.STRING,
+            type:DataTypes.STRING,
             allowNull:false
         }
    });

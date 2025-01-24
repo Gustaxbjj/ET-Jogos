@@ -14,22 +14,22 @@ const Jogos = database.define(
 
         nome:{
             type:DataType.STRING,
-            allowNull:true
+            allowNull:false
         },
 
         descricao:{
             type: DataType.STRING,
-            allowNull:true
+            allowNull:false
         },
 
         imgDoJogo:{
             type:DataType.STRING,
-            allowNull: true
+            allowNull: false
         },
 
         lancamento:{
             type:DataType.DATE,
-            allowNull:true
+            allowNull:false
         }
 
    });      
