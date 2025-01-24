@@ -6,9 +6,9 @@ const Jogos = database.define(
    {
 
        cod:{
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             autoIncrement: false,
-            allowNull: true,
+            allowNull: false,
             primaryKey: true
         },
 

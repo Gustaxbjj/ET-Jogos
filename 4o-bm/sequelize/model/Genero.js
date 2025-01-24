@@ -6,14 +6,14 @@ const Genero = database.define(
    {
 
        cod:{
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             autoIncrement: false,
             allowNull: false,
             primaryKey: true
         },
         nome:{
             type:DataType.STRING,
-            allowNull:true
+            allowNull:false
         }
    });
    module.exports = Genero
