@@ -1,11 +1,11 @@
-const {Sequelize} = require('sequelize');
+const {Sequelize} = require('sequelize')
 const sequelize = new Sequelize(
      'etjogos',
      'aluno.ifal',
-     'aluno.ifal22',
+     'aluno.ifal',
     {
-        host:'localhost',
-        dialect:'mysql2'
+        host:'localhost',   
+        dialect:'mysql'
     }
 );
 module.exports = sequelize

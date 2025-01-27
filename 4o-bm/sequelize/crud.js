@@ -1,24 +1,21 @@
 const database = require('./db');
-const Genero = require('./model/Genero');
-const Generojogo = require('./model/Generojogo')
+const Genero = require('./model/Genero');   
 const Jogos = require('./model/Jogos');
 const Pagamento = require('./model/Pagamento');
 const Produto = require('./model/Produto');
 const Usuario = require('./model/Usuario');
-const Usuariogenero = require('./model/Usuariogenero');
-const Usuariojogos = require('./model/Usuariojogos');
-const Usuariopagamento = require('./model/Usuariopagamento');
-const Usuarioprodutospagameto = require('./model/Usuarioprodutospagamento')
 
-const setupRelacoes = require ('./model/relacoes');
+
+const setupRelacoes = require ('./model/Relacoes');
 
 (async () =>{
     try{
-         setupRelacoes();
+        //  setupRelacoes();
+         await database.sync({ force: true });
+         console.log('Banco de dados sincronizado.');
 
-         await database.sync();
          console.log('DB sync');
     } catch (error){
-        console.log("ERRO!, error");
+        console.log("ERRO!", error);
     }
 })()
