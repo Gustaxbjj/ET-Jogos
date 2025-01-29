@@ -5,7 +5,7 @@ const Produto = database.define(
     'Produto',
    {
 
-       cod:{
+       codProduto:{
             type: DataTypes.STRING,
             autoIncrement: false,
             allowNull: false,

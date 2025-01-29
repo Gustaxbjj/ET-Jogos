@@ -10,7 +10,7 @@ const setupRelacoes = require ('./model/Relacoes');
 
 (async () =>{
     try{
-        //  setupRelacoes();
+         setupRelacoes();
          await database.sync({ force: true });
          console.log('Banco de dados sincronizado.');
 

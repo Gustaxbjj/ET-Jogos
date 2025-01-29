@@ -6,31 +6,31 @@ const Produto = require('./Produto');
 
 
 module.exports = () => {
-    Usuario.belongsToMany(Usuario, {foreignKey: 'UsuarioJogos'});
-    Jogos.belongsToMany(Jogos, {foreignKey: 'UsuarioJogos'});
+    Usuario.belongsToMany(Jogos, {through: 'UsuarioJogos'});
+    Jogos.belongsToMany(Usuario, {through: 'UsuarioJogos'});
 
-    Usuario.belongsToMany(Usuario, {foreignKey: 'Usuariogenero'});
-    Genero.belongsToMany(Genero, {foreignKey: 'Usuariogenero'});
+    Usuario.belongsToMany(Genero, {through: 'Usuariogenero'});
+    Genero.belongsToMany(Usuario, {through: 'Usuariogenero'});
 
-    Usuario.belongsToMany(Usuario, {foreignKey: 'Usuariopagamento'});
-    Pagamento.belongsToMany(Pagamento, {foreignKey: 'Usuariopagamento'});
+    Usuario.belongsToMany(Pagamento, {through: 'Usuariopagamento'});
+    Pagamento.belongsToMany(Usuario, {through: 'Usuariopagamento'});
 
-    Genero.belongsToMany(Genero, {foreignKey: 'Generojogos'});
-    Jogos.belongsToMany(Jogos, {foreignKey: 'GenerosJogos'});
+    Genero.belongsToMany(Jogos, {through: 'Generojogos'});
+    Jogos.belongsToMany(Genero, {through: 'GenerosJogos'});
 
-    Usuario.belongsToMany(Usuario, {foreignKey: 'Usuarioprodutospagamentos'});
-    Produto.belongsToMany(Produto, {foreignKey: 'Usuarioprodutospagamentos'})
-    Pagamento.belongsToMany(Pagamento, {foreignKey: 'Usuarioprodutospagamentos'});
+    // Usuario.belongsToMany(Usuario, {through: 'Usuarioprodutospagamentos'});
+    // Produto.belongsToMany(Produto, {through: 'Usuarioprodutospagamentos'})
+    // Pagamento.belongsToMany(Pagamento, {through: 'Usuarioprodutospagamentos'});
 
-    Produto.hasMany(Produto, {foreignKey:'Produtojogos'})
-    Jogos.belongsToMany(Jogos, {foreignKey: 'Produtojogos'});
+    Produto.hasMany(Jogos, {foreignKey:'codProduto'});
+    Jogos.hasMany (Produto, {foreignKey: 'codProduto'});
 
 
-    Pagamento.hasMany(Pagamento, {foreignKey: 'Pagamentousuario'});
-    Usuario.belongsToMany(Usuario, {foreignKey: 'Pagamentousuario'});
+    Pagamento.hasMany(Usuario, {foreignKey: 'id'});
+    Usuario.belongsTo(Pagamento, {foreignKey: 'id'});
 
-    Pagamento.hasMany(Pagamento, {foreignKey: 'Pagamentoproduto'});
-    Produto.belongsToMany(Produto, {foreignKey: 'Pagamentoproduto'})
+    Pagamento.hasMany(Produto, {foreignKey: 'id'});
+    Produto.belongsTo(Pagamento, {foreignKey: 'id'})
 
 
   };
