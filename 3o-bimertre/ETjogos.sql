@@ -10,7 +10,7 @@ imgDoUsuario varchar(60)
 );
 
 create table jogos(
-cod varchar(11)  primary key not null,
+cod varchar(11)  primary key not null ,
 nome varchar(100) not null,
 descricao varchar(100),
 imgDojogo varchar(60) not null,
@@ -23,7 +23,7 @@ nome varchar(50)
 );
 
 create table produtos(
-cod varchar(11) primary key not null,
+cod varchar(11) primary key not null ,
 descricao varchar(100),
 nome varchar(50) not null,
 quantidade varchar(10),
@@ -37,7 +37,7 @@ foreign key(FK_cod_jogos) references jogos(cod)
 
 create table pagamento(
 
-id varchar(8) primary key not null,
+id varchar(8) primary key not null ,
 formaDePagamento varchar(30),
 imgQrcode varchar(60),
 FK_cpf_usuario varchar(14),
